@@ -19,11 +19,11 @@ Play.prototype.rollPlayer = function(player1, player2) {
     return roll;
   } else {
     this.total = 0;
-    this.endPlay(player1, player2)
+    this.switchTurn(player1, player2)
     return roll;
   };
 };
-Play.prototype.endPlay = function(player1,player2) {
+Play.prototype.switchTurn = function(player1,player2) {
   this.player = this.score+this.turnTotal;
   this.turnTotal = 0;
   this.roll = 0;
@@ -55,23 +55,23 @@ $(document).ready(function() {
  var player2 = new Player("Player 2");
  var current = new Play(player1);
 
-   $("#roll-total").text(total);
-   $('#player1-score').text(player1.score);
-$('#player2-score').text(player2.score);
+   $("#turn-total").text(total);
+   $('#outout1').text(player1.score);
+$('#output2').text(player2.score);
 $('#current_player').text(current.player.name);
 
   $("form#roll").submit(function(event) {
     event.preventDefault();
     var result = current.rollPlayer(player1, player2);
     $('#roll').text(result);
-    $('#roll-total').text(current.total);
+    $('#turn-total').text(current.total);
 
     if ((current.total + current.player.score) >= 100) {
       if (current.player == player1) {
-          $('#player1-score').text(current.total + current.player.score);
+          $('#outout1').text(current.total + current.player.score);
           alert("You are the winner!");
       } else if (current.player == player2) {
-          $('#player2-score').text(current.total + current.player.score)
+          $('#output2').text(current.total + current.player.score)
           alert("You are the winner!");
      }
    };
@@ -82,10 +82,10 @@ $('#current_player').text(current.player.name);
       //event.preventDefault();
   //  });
   });
-  $("form#end-turn").submit(function(event) {
+  $("form#switch").submit(function(event) {
   event.preventDefault();
 
-  current.endPlay(player1, player2);
+  current.switchTurn(player1, player2);
 
 
   $('#current_player').text(current.player.name);
