@@ -1,18 +1,23 @@
-#total{
+#total {
   text-align: center;
 }
-#player{
+
+#player {
   text-align: right;
 }
-#play{
+
+#play {
   text-align: center;
 }
-#input{
+
+#input {
   display: none;
 }
-#name2{
+
+#name2 {
   text-align: right;
 }
-body{
+
+body {
   background-color: gray;
 }
