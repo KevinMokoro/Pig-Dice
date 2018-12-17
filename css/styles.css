@@ -1,0 +1,18 @@
+#total{
+  text-align: center;
+}
+#player{
+  text-align: right;
+}
+#play{
+  text-align: center;
+}
+#input{
+  display: none;
+}
+#name2{
+  text-align: right;
+}
+body{
+  background-color: gray;
+}
