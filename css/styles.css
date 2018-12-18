@@ -31,3 +31,7 @@ h1 {
 h2 {
   color: green;
 }
+h4 {
+  color: red;
+  font-weight: bold;
+}
